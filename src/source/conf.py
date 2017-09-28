@@ -84,7 +84,8 @@ todo_include_todos = False
 # a list of builtin themes.
 #
 html_theme = "sphinx_rtd_theme"
-html_theme_path = ['../../winpython/python-3.6.2/Lib/site-packages/sphinx_rtdbootstrap_theme/']
+# html_theme_path = ['../../winpython/python-3.6.2/Lib/site-packages/sphinx_rtdbootstrap_theme/']
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 
 # Theme options are theme-specific and customize the look and feel of a theme
