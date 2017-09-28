@@ -10,10 +10,8 @@ def format_field_entry(row):
     str_list = []
     
     # Field-name
-    # str_list.append('=========================================================================')
     str_list.append('\n\n{0}\n'.format(row[1]))
     str_list.append('-------------------------------------------------------------------------\n\n')
-   
     
     # Data-type
     str_list.append('  :Data type: {0}\n'.format(no_paras(row[5])))
@@ -64,10 +62,7 @@ if __name__ == "__main__":
         f.write('.. title:: Field Reference\n\n')
         f.write('Field Reference\n')
         f.write('=========================================================================')
-        #PermissionError: [Errno 13] Permission denied: 'D:\\work\\custom-software-group\\code\\github\\apidocs\\src\\source\\test-all-fields.rst'
          
         for row in datareader:
-            if skip_first_row:
-                skip_first_row = False
-            else:
-                f.write(filter_name_space(row))
+            f.write(filter_name_space(row))
+            
