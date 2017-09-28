@@ -31,6 +31,6 @@ The `CKAN API <http://docs.ckan.org/en/ckan-2.5.6/api/index.html>`_ is already w
 
 Versions
 ---------
-This document is for the current `MapAction schema <https://github.com/mapaction/ckanext-mapactionschemas>`_ version |version|, which is hosted on 
+This document is for the current `MapAction schema <https://github.com/mapaction/ckanext-mapactionschemas>`_ version |version| (release |release|), which is hosted on 
 and `CKAN v2.5.5 <https://github.com/aptivate/ckan/releases/tag/ckan-2.5.5-mapaction>`_.
 
