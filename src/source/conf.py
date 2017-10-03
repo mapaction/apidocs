@@ -83,33 +83,33 @@ todo_include_todos = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
+
+import os
 import sphinx_rtd_theme
+
+on_rtd = os.environ.get('READTHEDOCS') == 'True'
 html_theme = "sphinx_rtd_theme"
-# html_theme_path = ['../../winpython/python-3.6.2/Lib/site-packages/sphinx_rtdbootstrap_theme/']
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-# html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 
-# Theme options are theme-specific and customize the look and feel of a theme
-# further.  For a list of options available for each theme, see the
-# documentation.
-#
-# html_theme_options = {}
+if on_rtd:
+    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+else:
+    html_theme_path = ['../../winpython/python-3.6.2/Lib/site-packages/sphinx_rtdbootstrap_theme/']
 
+    
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-html_context = {
-    'css_files': [
-        '_static/theme_overrides.css',  # override wide tables in RTD theme
-        ],
-     }
+# Add in custom CSS to fix table width truncation in the standard RTD theme.
+# See https://github.com/rtfd/sphinx_rtd_theme/issues/117#issuecomment-41571653
+def setup(app):
+    app.add_stylesheet("theme_overrides.css")
 
-# (Optional) Logo. Should be small enough to fit the navbar (ideally 24x24).
-# Path should be relative to the ``_static`` files directory.
-html_logo = "mapaction-logo-transparent-on-white-135x49px.png"
-
+   
+# Theme options are theme-specific and customize the look and feel of a theme
+# further.  For a list of options available for each theme, see the
+# documentation.
 html_theme_options = {
     'collapse_navigation': False,
     'display_version': False,
@@ -117,6 +117,9 @@ html_theme_options = {
     'prev_next_buttons_location': "both"
 }
 
+# (Optional) Logo. Should be small enough to fit the navbar (ideally 24x24).
+# Path should be relative to the ``_static`` files directory.
+html_logo = "mapaction-logo-transparent-on-white-135x49px.png"
 
 # -- Options for HTMLHelp output ------------------------------------------
 
