@@ -3,7 +3,7 @@
 Fields available by product type
 --------------------------------
 
-Most fields are present for most product types. This table highlights the any differences between the product types.
+Most fields are present for most product types. This table highlights any differences between the product types.
 
 .. csv-table:: Fields available by product type
    :widths: auto
